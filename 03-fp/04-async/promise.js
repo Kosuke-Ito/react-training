@@ -8,6 +8,8 @@ const promise = new Promise((resolve, reject) => {
   }
 });
 
+console.log(promise);
+
 promise.then((value) => {
     console.log('1.', value);
 
@@ -15,11 +17,16 @@ promise.then((value) => {
   })
   .then((value) => {
     console.log('2.', value);
+
+    return '2のあとやで';
+  })
+  .then((value) => {
+    console.log('5.', value);
   })
   .catch((error) => {
     console.error('3.', error);
   })
   .finally(() => {
-    console.log('4.', 'Completed');
+    console.log('4.', 'Complite');
   });
 
